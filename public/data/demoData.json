@@ -24,7 +24,7 @@
   "accounts": [
     {
       "id": "acc_001",
-      "bank": "First Bank",
+      "bank": "UBA Bank",
       "accountNumber": "****4567",
       "balance": 125000,
       "currency": "NGN",
@@ -32,7 +32,7 @@
     },
     {
       "id": "acc_002",
-      "bank": "GTBank",
+      "bank": "OPay",
       "accountNumber": "****8901",
       "balance": 45000,
       "currency": "NGN",
