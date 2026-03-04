@@ -24,19 +24,198 @@
   "accounts": [
     {
       "id": "acc_001",
+      "type": "savings",
       "bank": "UBA Bank",
       "accountNumber": "****4567",
       "balance": 125000,
       "currency": "NGN",
-      "status": "connected"
+      "status": "connected",
+      "icon": "fa-university",
+      "color": "#E62E2D",
+      "transactions": [
+        {
+          "id": "txn_001",
+          "date": "2026-03-03",
+          "description": "Salary Payment - ABC Corp",
+          "amount": 250000,
+          "type": "credit",
+          "category": "income"
+        },
+        {
+          "id": "txn_002",
+          "date": "2026-03-02",
+          "description": "DStv Payment",
+          "amount": -24500,
+          "type": "debit",
+          "category": "entertainment"
+        },
+        {
+          "id": "txn_003",
+          "date": "2026-03-01",
+          "description": "Shoprite Purchase",
+          "amount": -35000,
+          "type": "debit",
+          "category": "groceries"
+        },
+        {
+          "id": "txn_004",
+          "date": "2026-02-28",
+          "description": "ATM Withdrawal",
+          "amount": -50000,
+          "type": "debit",
+          "category": "cash"
+        },
+        {
+          "id": "txn_005",
+          "date": "2026-02-27",
+          "description": "Spectranet Internet",
+          "amount": -15000,
+          "type": "debit",
+          "category": "utilities"
+        }
+      ]
     },
     {
       "id": "acc_002",
+      "type": "wallet",
       "bank": "OPay",
       "accountNumber": "****8901",
       "balance": 45000,
       "currency": "NGN",
-      "status": "connected"
+      "status": "connected",
+      "icon": "fa-wallet",
+      "color": "#00C9A7",
+      "transactions": [
+        {
+          "id": "txn_006",
+          "date": "2026-03-03",
+          "description": "Transfer from UBA",
+          "amount": 20000,
+          "type": "credit",
+          "category": "transfer"
+        },
+        {
+          "id": "txn_007",
+          "date": "2026-03-02",
+          "description": "Uber Ride",
+          "amount": -2500,
+          "type": "debit",
+          "category": "transport"
+        },
+        {
+          "id": "txn_008",
+          "date": "2026-03-01",
+          "description": "MTN Airtime",
+          "amount": -1000,
+          "type": "debit",
+          "category": "airtime"
+        },
+        {
+          "id": "txn_009",
+          "date": "2026-02-28",
+          "description": "Restaurant Payment",
+          "amount": -8500,
+          "type": "debit",
+          "category": "dining"
+        },
+        {
+          "id": "txn_010",
+          "date": "2026-02-27",
+          "description": "Cash Back Reward",
+          "amount": 500,
+          "type": "credit",
+          "category": "rewards"
+        }
+      ]
+    }
+  ],
+  "creditCards": [
+    {
+      "id": "card_001",
+      "type": "credit",
+      "bank": "Access Bank",
+      "cardNumber": "****2845",
+      "balance": -85000,
+      "creditLimit": 200000,
+      "availableCredit": 115000,
+      "currency": "NGN",
+      "status": "active",
+      "icon": "fa-credit-card",
+      "color": "#FF6B35",
+      "dueDate": "2026-03-15",
+      "minimumPayment": 8500,
+      "transactions": [
+        {
+          "id": "txn_011",
+          "date": "2026-03-02",
+          "description": "Jumia Online Shopping",
+          "amount": -25000,
+          "type": "debit",
+          "category": "shopping"
+        },
+        {
+          "id": "txn_012",
+          "date": "2026-03-01",
+          "description": "Filmhouse Cinema",
+          "amount": -12000,
+          "type": "debit",
+          "category": "entertainment"
+        },
+        {
+          "id": "txn_013",
+          "date": "2026-02-28",
+          "description": "Payment Received - Thank You!",
+          "amount": 25000,
+          "type": "credit",
+          "category": "payment"
+        },
+        {
+          "id": "txn_014",
+          "date": "2026-02-25",
+          "description": "Ebeano Supermarket",
+          "amount": -18000,
+          "type": "debit",
+          "category": "groceries"
+        }
+      ]
+    },
+    {
+      "id": "card_002",
+      "type": "debit",
+      "bank": "UBA Bank",
+      "cardNumber": "****4567",
+      "balance": 125000,
+      "currency": "NGN",
+      "status": "active",
+      "icon": "fa-credit-card",
+      "color": "#E62E2D",
+      "linkedAccount": "acc_001",
+      "transactions": [
+        {
+          "id": "txn_015",
+          "date": "2026-03-03",
+          "description": "POS - Total Filling Station",
+          "amount": -5000,
+          "type": "debit",
+          "category": "fuel"
+        },
+        {
+          "id": "txn_016",
+          "date": "2026-03-02",
+          "description": "Online Transfer - Sent",
+          "amount": -20000,
+          "type": "debit",
+          "category": "transfer"
+        },
+        {
+          "id": "txn_017",
+          "date": "2026-03-01",
+          "description": "POS - Pharmacy",
+          "amount": -3500,
+          "type": "debit",
+          "category": "health"
+        }
+      ]
     }
   ],
   "needBoxes": [

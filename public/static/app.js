@@ -211,32 +211,132 @@ class AIBank {
   }
 
   renderNeedBoxSpecificContent(box) {
-    if (box.id === 'bills' && box.bills) {
+    if (box.id === 'bills') {
       return `
         <div class="mb-6">
-          <h2 class="text-lg font-bold text-gray-800 mb-3">
-            <i class="fas fa-file-invoice mr-2" style="color: ${box.color};"></i>Upcoming Bills
-          </h2>
-          <div class="space-y-3">
-            ${box.bills.map(bill => `
-              <div class="bg-white rounded-xl p-4 border-2 ${bill.autopay ? 'border-green-200' : 'border-gray-200'}">
-                <div class="flex items-center justify-between mb-2">
+          <!-- Accounts Dashboard -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <h2 class="text-lg font-bold text-gray-800">
+                <i class="fas fa-university mr-2" style="color: ${box.color};"></i>Accounts & Cards
+              </h2>
+              <button onclick="aiBank.handleAddAccount()" class="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90">
+                <i class="fas fa-plus text-white"></i>
+              </button>
+            </div>
+            
+            <!-- Bank Accounts -->
+            ${this.data.accounts ? this.data.accounts.map(account => `
+              <div class="bg-white rounded-xl p-4 mb-4 border-2 border-gray-200">
+                <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
-                      <i class="fas ${bill.icon} text-xl" style="color: ${box.color};"></i>
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: ${account.color}20;">
+                      <i class="fas ${account.icon} text-xl" style="color: ${account.color};"></i>
                     </div>
                     <div>
-                      <h3 class="font-semibold text-gray-800">${bill.provider}</h3>
-                      <p class="text-sm text-gray-500">Due: ${new Date(bill.dueDate).toLocaleDateString('en-NG', { month: 'short', day: 'numeric' })}</p>
+                      <h3 class="font-semibold text-gray-800">${account.bank}</h3>
+                      <p class="text-xs text-gray-500">${account.accountNumber} • ${account.type === 'savings' ? 'Savings' : 'Wallet'}</p>
                     </div>
                   </div>
                   <div class="text-right">
-                    <div class="font-bold text-lg" style="color: ${box.color};">₦${bill.amount.toLocaleString()}</div>
-                    ${bill.autopay ? '<span class="text-xs text-green-600 font-semibold">AUTO-PAY ON</span>' : '<span class="text-xs text-gray-500">Manual</span>'}
+                    <div class="font-bold text-lg" style="color: ${account.balance >= 0 ? box.color : '#FF6F91'};">₦${Math.abs(account.balance).toLocaleString()}</div>
+                    <span class="text-xs ${account.status === 'connected' ? 'text-green-600' : 'text-gray-500'} font-semibold">${account.status}</span>
+                  </div>
+                </div>
+                
+                <!-- Transaction History -->
+                <div class="mt-3 pt-3 border-t border-gray-100">
+                  <button onclick="aiBank.toggleTransactions('${account.id}')" class="text-sm text-primary font-semibold mb-2 flex items-center gap-1">
+                    <i class="fas fa-history"></i>
+                    <span>Recent Transactions</span>
+                    <i class="fas fa-chevron-down text-xs" id="chevron-${account.id}"></i>
+                  </button>
+                  <div id="transactions-${account.id}" class="hidden space-y-2">
+                    ${account.transactions && account.transactions.length > 0 ? account.transactions.slice(0, 5).map(txn => `
+                      <div class="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+                        <div class="flex-1">
+                          <p class="text-sm font-medium text-gray-800">${txn.description}</p>
+                          <p class="text-xs text-gray-500">${new Date(txn.date).toLocaleDateString('en-NG', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                        </div>
+                        <div class="text-right">
+                          <p class="text-sm font-bold ${txn.type === 'credit' ? 'text-green-600' : 'text-gray-800'}">
+                            ${txn.type === 'credit' ? '+' : ''}₦${Math.abs(txn.amount).toLocaleString()}
+                          </p>
+                          <p class="text-xs text-gray-400">${txn.category}</p>
+                        </div>
+                      </div>
+                    `).join('') : '<p class="text-sm text-gray-400 py-2">No recent transactions</p>'}
                   </div>
                 </div>
               </div>
-            `).join('')}
+            `).join('') : ''}
+            
+            <!-- Credit/Debit Cards -->
+            ${this.data.creditCards ? this.data.creditCards.map(card => `
+              <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-4 mb-4 text-white relative overflow-hidden">
+                <!-- Card Design Elements -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full -ml-12 -mb-12"></div>
+                
+                <div class="relative z-10">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas ${card.icon} text-xl"></i>
+                      <span class="text-sm font-semibold">${card.type === 'credit' ? 'Credit Card' : 'Debit Card'}</span>
+                    </div>
+                    <span class="text-xs bg-white/20 px-2 py-1 rounded">${card.status.toUpperCase()}</span>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <p class="text-xs text-white/60 mb-1">${card.bank}</p>
+                    <p class="text-lg font-mono tracking-wider">${card.cardNumber}</p>
+                  </div>
+                  
+                  <div class="flex items-end justify-between">
+                    <div>
+                      <p class="text-xs text-white/60 mb-1">${card.type === 'credit' ? 'Outstanding Balance' : 'Available Balance'}</p>
+                      <p class="text-2xl font-bold">₦${Math.abs(card.balance).toLocaleString()}</p>
+                      ${card.type === 'credit' ? `
+                        <p class="text-xs text-white/60 mt-1">Credit Limit: ₦${card.creditLimit.toLocaleString()}</p>
+                        <p class="text-xs text-green-400">Available: ₦${card.availableCredit.toLocaleString()}</p>
+                      ` : ''}
+                    </div>
+                    ${card.type === 'credit' ? `
+                      <div class="text-right">
+                        <p class="text-xs text-white/60">Min Payment Due</p>
+                        <p class="text-lg font-bold text-yellow-400">₦${card.minimumPayment.toLocaleString()}</p>
+                        <p class="text-xs text-white/60">${new Date(card.dueDate).toLocaleDateString('en-NG', { month: 'short', day: 'numeric' })}</p>
+                      </div>
+                    ` : ''}
+                  </div>
+                  
+                  <!-- Transaction History -->
+                  <div class="mt-4 pt-4 border-t border-white/10">
+                    <button onclick="aiBank.toggleTransactions('${card.id}')" class="text-sm text-white/80 font-semibold mb-2 flex items-center gap-1 hover:text-white">
+                      <i class="fas fa-history"></i>
+                      <span>Recent Transactions</span>
+                      <i class="fas fa-chevron-down text-xs" id="chevron-${card.id}"></i>
+                    </button>
+                    <div id="transactions-${card.id}" class="hidden space-y-2">
+                      ${card.transactions && card.transactions.length > 0 ? card.transactions.slice(0, 5).map(txn => `
+                        <div class="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
+                          <div class="flex-1">
+                            <p class="text-sm font-medium text-white">${txn.description}</p>
+                            <p class="text-xs text-white/50">${new Date(txn.date).toLocaleDateString('en-NG', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                          </div>
+                          <div class="text-right">
+                            <p class="text-sm font-bold ${txn.type === 'credit' ? 'text-green-400' : 'text-white'}">
+                              ${txn.type === 'credit' ? '+' : ''}₦${Math.abs(txn.amount).toLocaleString()}
+                            </p>
+                            <p class="text-xs text-white/40">${txn.category}</p>
+                          </div>
+                        </div>
+                      `).join('') : '<p class="text-sm text-white/40 py-2">No recent transactions</p>'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `).join('') : ''}
           </div>
         </div>
       `;
@@ -763,6 +863,61 @@ class AIBank {
                       this.closeModal();
                       this.render();
                     }
+                  }
+                ]
+              });
+            }, 500);
+          }
+        },
+        {
+          text: 'Cancel',
+          class: 'btn-secondary',
+          action: () => this.closeModal()
+        }
+      ]
+    });
+  }
+
+  toggleTransactions(accountId) {
+    const element = document.getElementById(`transactions-${accountId}`);
+    const chevron = document.getElementById(`chevron-${accountId}`);
+    
+    if (element) {
+      if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+        if (chevron) chevron.classList.add('fa-chevron-up');
+        if (chevron) chevron.classList.remove('fa-chevron-down');
+      } else {
+        element.classList.add('hidden');
+        if (chevron) chevron.classList.remove('fa-chevron-up');
+        if (chevron) chevron.classList.add('fa-chevron-down');
+      }
+    }
+  }
+
+  handleAddAccount() {
+    this.showModal({
+      title: 'Add New Account',
+      message: 'Connect a new bank account or card to your AI-Mobile Lifestyle Banking app. This feature allows you to link additional accounts for comprehensive financial management.',
+      icon: 'fa-plus-circle',
+      iconColor: 'text-primary',
+      buttons: [
+        {
+          text: 'Connect Account',
+          class: 'btn-primary',
+          action: () => {
+            this.closeModal();
+            setTimeout(() => {
+              this.showModal({
+                title: 'Coming Soon!',
+                message: 'Account linking will be available in the next version. For now, this is a demo feature.',
+                icon: 'fa-info-circle',
+                iconColor: 'text-blue-500',
+                buttons: [
+                  {
+                    text: 'Got it',
+                    class: 'btn-primary',
+                    action: () => this.closeModal()
                   }
                 ]
               });
