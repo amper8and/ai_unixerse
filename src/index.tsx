@@ -19,12 +19,12 @@ app.get('/', (c) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <title>AI-Mobile Lifestyle Banking</title>
+        <title>UBA Lifestyle Banking</title>
         
-        <!-- Inter Font -->
+        <!-- PT Sans Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
         
         <!-- TailwindCSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -41,12 +41,12 @@ app.get('/', (c) => {
             theme: {
               extend: {
                 fontFamily: {
-                  sans: ['Inter', 'system-ui', 'sans-serif'],
+                  sans: ['PT Sans', 'system-ui', 'sans-serif'],
                 },
                 colors: {
-                  primary: '#00C9A7',
-                  secondary: '#845EC2',
-                  accent: '#FF6F91',
+                  primary: '#EB2C23',
+                  secondary: '#7D7D7D',
+                  accent: '#EB2C23',
                   dark: '#1A1A2E',
                   light: '#F8F9FA',
                 }
@@ -60,7 +60,7 @@ app.get('/', (c) => {
         <div id="app" class="min-h-screen flex items-center justify-center">
           <div class="text-center p-8">
             <i class="fas fa-circle-notch fa-spin text-6xl text-primary mb-4"></i>
-            <p class="text-gray-600 font-semibold">Loading AI-Mobile Banking...</p>
+            <p class="text-gray-600 font-semibold">Loading UBA Banking...</p>
           </div>
         </div>
 

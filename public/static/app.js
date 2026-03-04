@@ -1,4 +1,4 @@
-// AI-Mobile Lifestyle Banking - Main Application
+// UBA Lifestyle Banking - Main Application
 // This app provides a comprehensive demo of lifestyle banking features
 
 class AIBank {
@@ -50,15 +50,18 @@ class AIBank {
     return `
       <div class="app-container">
         <!-- Header with Extended Background -->
-        <div class="bg-gradient-to-r from-primary to-teal-600 text-white p-6 pb-24 rounded-b-3xl">
+        <div class="bg-gradient-to-r from-primary to-red-700 text-white p-6 pb-24 rounded-b-3xl">
           <div class="flex justify-between items-center mb-6">
             <div>
               <h1 class="text-2xl font-bold">${user.greeting}, ${user.firstName}</h1>
               <p class="text-white/80 text-sm mt-1">Quick Wins:</p>
             </div>
-            <button onclick="aiBank.openSettings()" class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
-              <i class="fas fa-user text-xl"></i>
-            </button>
+            <div class="flex items-center gap-3">
+              <img src="/static/uba-logo.svg" alt="UBA" class="h-10 w-auto" style="filter: brightness(0) invert(1);" />
+              <button onclick="aiBank.openSettings()" class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
+                <i class="fas fa-user text-xl"></i>
+              </button>
+            </div>
           </div>
 
           <!-- Hero Carousel -->

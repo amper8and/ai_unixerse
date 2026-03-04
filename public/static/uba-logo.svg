@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <!-- UBA Logo - Primary Version with White Text -->
+  <!-- Red triangular shapes forming stylized 'U' -->
+  <g fill="#EB2C23">
+    <!-- Left triangle piece -->
+    <path d="M120 100 L120 380 L280 250 Z"/>
+    <!-- Right triangle piece -->
+    <path d="M390 100 L390 310 L280 380 L280 250 Z"/>
+  </g>
+  
+  <!-- UBA Text -->
+  <text x="200" y="500" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#EB2C23" text-anchor="middle" letter-spacing="5">UBA</text>
+</svg>
