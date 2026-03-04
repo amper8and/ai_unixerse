@@ -40,7 +40,7 @@ A fully functional, executive-presentation-quality demo app for AI-Mobile Lifest
 The app uses a comprehensive demo dataset stored in `public/data/demoData.json` with:
 
 1. **User Profile** - Personal info, preferences, and settings
-2. **Accounts** - 2 linked bank accounts (First Bank, GTBank)
+2. **Accounts** - 2 linked bank accounts (UBA Bank, OPay)
 3. **Need Boxes** - 9 lifestyle banking modules with:
    - Icon, color, status, progress
    - Insights and action items
