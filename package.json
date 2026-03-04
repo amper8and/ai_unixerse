@@ -10,7 +10,12 @@
     "deploy:prod": "npm run build && wrangler pages deploy dist --project-name webapp",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
     "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
-    "test": "curl http://localhost:3000"
+    "test": "curl http://localhost:3000",
+    "test:level1": "./tests/level1_smoke.sh",
+    "test:level2": "./tests/level2_core.sh",
+    "test:level3": "./tests/level3_regression.sh",
+    "test:all": "./tests/run_all.sh",
+    "test:quick": "./tests/level1_smoke.sh && ./tests/level2_core.sh"
   },
   "dependencies": {
     "hono": "^4.12.4"
