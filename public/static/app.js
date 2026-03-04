@@ -52,16 +52,16 @@ class AIBank {
         <!-- Header with Extended Background -->
         <div class="bg-gradient-to-r from-primary to-red-700 text-white p-6 pb-24 rounded-b-3xl">
           <div class="flex justify-between items-center mb-6">
-            <div>
-              <h1 class="text-2xl font-bold">${user.greeting}, ${user.firstName}</h1>
-              <p class="text-white/80 text-sm mt-1">Quick Wins:</p>
-            </div>
             <div class="flex items-center gap-3">
-              <img src="/static/uba-logo.svg" alt="UBA" class="h-10 w-auto" style="filter: brightness(0) invert(1);" />
-              <button onclick="aiBank.openSettings()" class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
-                <i class="fas fa-user text-xl"></i>
-              </button>
+              <img src="/static/uba-logo-white-bg.png" alt="UBA" class="h-12 w-auto" />
+              <div>
+                <h1 class="text-2xl font-bold">${user.greeting}, ${user.firstName}</h1>
+                <p class="text-white/80 text-sm mt-1">Quick Wins:</p>
+              </div>
             </div>
+            <button onclick="aiBank.openSettings()" class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
+              <i class="fas fa-user text-xl"></i>
+            </button>
           </div>
 
           <!-- Hero Carousel -->
