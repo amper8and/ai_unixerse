@@ -65,9 +65,17 @@ app.get('/', (c) => {
         </div>
 
         <!-- AI Assistant Button (Fixed) -->
-        <button class="ai-assistant-btn" onclick="aiBank.openAIAssistant()">
-          <i class="fas fa-robot"></i>
-          <span>AI Assistant</span>
+        <button class="ai-assistant-btn" onclick="aiBank.openAIAssistant()" title="AI Assistant">
+          <svg class="ai-sparkle-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Large sparkle -->
+            <path d="M14 2L15.5 9.5L23 11L15.5 12.5L14 20L12.5 12.5L5 11L12.5 9.5L14 2Z" fill="white"/>
+            <!-- Small sparkle top right -->
+            <path d="M21 5L21.8 7.2L24 8L21.8 8.8L21 11L20.2 8.8L18 8L20.2 7.2L21 5Z" fill="white"/>
+            <!-- Small sparkle bottom right -->
+            <path d="M22 18L22.6 19.4L24 20L22.6 20.6L22 22L21.4 20.6L20 20L21.4 19.4L22 18Z" fill="white"/>
+            <!-- Tiny sparkle left -->
+            <path d="M8 20L8.5 21L9.5 21.5L8.5 22L8 23L7.5 22L6.5 21.5L7.5 21L8 20Z" fill="white"/>
+          </svg>
         </button>
         
         <!-- Main Application Script -->

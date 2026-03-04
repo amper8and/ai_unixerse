@@ -132,25 +132,36 @@ body {
 .ai-assistant-btn {
   position: fixed;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 24px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, #00C9A7 0%, #00B494 100%);
   color: white;
-  padding: 16px 32px;
-  border-radius: 32px;
-  box-shadow: 0 8px 24px rgba(0, 201, 167, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 201, 167, 0.4);
   border: none;
-  font-weight: 600;
-  font-size: 16px;
   cursor: pointer;
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.ai-assistant-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(0, 201, 167, 0.5);
 }
 
 .ai-assistant-btn:active {
-  transform: translateX(-50%) scale(0.95);
+  transform: scale(0.95);
+}
+
+/* AI Sparkle Icon */
+.ai-sparkle-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* Bottom Sheet */
