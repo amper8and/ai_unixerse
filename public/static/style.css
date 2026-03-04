@@ -157,11 +157,12 @@ body {
   transform: scale(0.95);
 }
 
-/* AI Sparkle Icon */
-.ai-sparkle-icon {
-  width: 28px;
-  height: 28px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+/* AI Icon Image */
+.ai-icon-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* Bottom Sheet */
