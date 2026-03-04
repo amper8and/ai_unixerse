@@ -336,8 +336,10 @@ For issues or questions about this demo:
 ## 🎨 Recent Updates
 
 ### Version 1.1.0 - UBA Corporate Identity (March 4, 2026)
-- ✅ Applied UBA logo to homepage header (top right)
-- ✅ Updated color scheme to UBA Red (#EB2C23) and Grey (#7D7D7D)
+- ✅ Applied official UBA logo to homepage header (top left)
+- ✅ Logo positioned before "Welcome" greeting with red background
+- ✅ Updated entire color scheme to use ONLY UBA Red (#EB2C23) and Grey (#7D7D7D)
 - ✅ Changed font to PT Sans (UBA's brand font)
-- ✅ Updated all gradients and UI elements with UBA colors
+- ✅ Updated all gradients, cards, and UI elements with UBA colors
+- ✅ Alternating red/grey pattern across all need boxes and hero cards
 - ✅ Committed and pushed to GitHub
