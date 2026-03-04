@@ -49,8 +49,8 @@ class AIBank {
     
     return `
       <div class="app-container">
-        <!-- Header -->
-        <div class="bg-gradient-to-r from-primary to-teal-600 text-white p-6 pb-8 rounded-b-3xl">
+        <!-- Header with Extended Background -->
+        <div class="bg-gradient-to-r from-primary to-teal-600 text-white p-6 pb-24 rounded-b-3xl">
           <div class="flex justify-between items-center mb-6">
             <div>
               <h1 class="text-2xl font-bold">${user.greeting}, ${user.firstName}</h1>
@@ -62,7 +62,7 @@ class AIBank {
           </div>
 
           <!-- Hero Carousel -->
-          <div class="carousel-container flex gap-3 -mb-12" style="overflow-x: auto;">
+          <div class="carousel-container flex gap-3" style="overflow-x: auto;">
             ${heroCards.map(card => `
               <div class="carousel-card min-w-[280px] rounded-2xl p-5 text-white" 
                    style="background: ${card.background}; box-shadow: 0 8px 24px rgba(0,0,0,0.15);"
@@ -79,7 +79,7 @@ class AIBank {
         </div>
 
         <!-- Need Boxes Grid -->
-        <div class="mt-16 px-4 pb-32">
+        <div class="mt-6 px-4 pb-32">
           <h2 class="text-xl font-bold text-gray-800 mb-4">Your Needs</h2>
           <div class="bento-grid">
             ${needBoxes.map(box => this.renderNeedBoxTile(box)).join('')}
