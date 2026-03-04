@@ -1,17 +1,18 @@
-# AI-Mobile Lifestyle Banking Demo
+# UBA Lifestyle Banking Demo
 
-A fully functional, executive-presentation-quality demo app for AI-Mobile Lifestyle Banking. Built with Hono, TypeScript, and Cloudflare Pages, this app showcases core banking journeys with a premium, modern fintech UI.
+A fully functional, executive-presentation-quality demo app for UBA Lifestyle Banking. Built with Hono, TypeScript, and Cloudflare Pages, this app showcases core banking journeys with a premium, modern fintech UI and UBA's corporate branding.
 
 ## 🌟 Project Overview
 
-**Name**: AI-Mobile Lifestyle Banking  
+**Name**: UBA Lifestyle Banking  
 **Goal**: Demonstrate a lifestyle banking platform that helps users automate bills, become debt-free, shop smarter, and get rewarded  
 **Tech Stack**: Hono + TypeScript + TailwindCSS + Cloudflare Pages  
 **Status**: ✅ Active and Running
+**Branding**: UBA Corporate Identity (Red #EB2C23, Grey #7D7D7D, PT Sans Font)
 
 ## 🔗 URLs
 
-- **Sandbox Demo**: https://3000-ixbegzpb9pve500g4ohvd-6532622b.e2b.dev
+- **Sandbox Demo**: https://3000-ixaxiuo51s23sxigcf9n6-6532622b.e2b.dev
 - **GitHub Repository**: https://github.com/amper8and/ai_unixerse
 - **Production**: (Deploy with `npm run deploy:prod`)
 
@@ -200,16 +201,17 @@ npm run test          # Test local server with curl
 
 ## 🎨 Design System
 
-### Colors
-- **Primary**: #00C9A7 (Teal) - Main brand color
-- **Secondary**: #845EC2 (Purple) - Debt & savings
-- **Accent**: #FF6F91 (Pink) - Shopping & promotions
+### UBA Corporate Identity
+- **Primary**: #EB2C23 (UBA Red) - Main brand color
+- **Secondary**: #7D7D7D (UBA Grey) - Supporting elements
+- **Accent**: #EB2C23 (UBA Red) - Highlights and CTAs
 - **Dark**: #1A1A2E - Text
 - **Light**: #F8F9FA - Background
+- **Logo**: UBA logo displayed in top right of header (white version on red background)
 
 ### Typography
-- **Font**: Inter (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700, 800
+- **Font**: PT Sans (Google Fonts) - UBA's brand font
+- **Weights**: 400 (Regular), 700 (Bold)
 - **Loading**: Optimized with preconnect
 
 ### Components
@@ -326,7 +328,16 @@ For issues or questions about this demo:
 
 ---
 
-**Built with ❤️ for AI-Mobile Lifestyle Banking**  
+**Built with ❤️ for UBA Lifestyle Banking**  
 **Last Updated**: March 4, 2026  
-**Version**: 1.0.0  
+**Version**: 1.1.0 - UBA Branded Edition  
 **Platform**: Cloudflare Pages + Hono Framework
+
+## 🎨 Recent Updates
+
+### Version 1.1.0 - UBA Corporate Identity (March 4, 2026)
+- ✅ Applied UBA logo to homepage header (top right)
+- ✅ Updated color scheme to UBA Red (#EB2C23) and Grey (#7D7D7D)
+- ✅ Changed font to PT Sans (UBA's brand font)
+- ✅ Updated all gradients and UI elements with UBA colors
+- ✅ Committed and pushed to GitHub
