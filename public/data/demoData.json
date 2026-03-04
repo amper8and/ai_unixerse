@@ -1,0 +1,454 @@
+{
+  "user": {
+    "id": "user_001",
+    "firstName": "Adebayo",
+    "lastName": "Okonkwo",
+    "email": "adebayo.okonkwo@example.com",
+    "phone": "+234 803 456 7890",
+    "avatar": "https://ui-avatars.com/api/?name=Adebayo+Okonkwo&background=00C9A7&color=fff",
+    "greeting": "Good morning",
+    "preferences": {
+      "topPriorities": ["bills", "debt", "rewards"],
+      "rewardTypes": ["cashback", "data", "airtime"],
+      "quietMode": false,
+      "language": "en",
+      "biometrics": true,
+      "notifications": {
+        "alerts": true,
+        "reminders": true,
+        "promotions": true,
+        "whatsapp": true
+      }
+    }
+  },
+  "accounts": [
+    {
+      "id": "acc_001",
+      "bank": "First Bank",
+      "accountNumber": "****4567",
+      "balance": 125000,
+      "currency": "NGN",
+      "status": "connected"
+    },
+    {
+      "id": "acc_002",
+      "bank": "GTBank",
+      "accountNumber": "****8901",
+      "balance": 45000,
+      "currency": "NGN",
+      "status": "connected"
+    }
+  ],
+  "needBoxes": [
+    {
+      "id": "bills",
+      "title": "Automate Bills & Payments",
+      "icon": "fa-file-invoice-dollar",
+      "color": "#00C9A7",
+      "bgColor": "#E6FAF5",
+      "status": "On track: 3 bills scheduled",
+      "progress": 75,
+      "badge": "urgent",
+      "badgeText": "3 DUE",
+      "phase": "full",
+      "featured": true,
+      "insights": [
+        "You have 3 bills due this week",
+        "Automation will save you ₦2,500 in late fees",
+        "Best time to pay: Thursday after 2 PM"
+      ],
+      "actions": [
+        {
+          "id": "action_bills_1",
+          "title": "Review & confirm 3 pending bills",
+          "description": "NEPA, Dstv, Internet",
+          "priority": "high",
+          "completed": false
+        },
+        {
+          "id": "action_bills_2",
+          "title": "Set up auto-pay for NEPA",
+          "description": "Never miss a payment again",
+          "priority": "medium",
+          "completed": false
+        },
+        {
+          "id": "action_bills_3",
+          "title": "Schedule DStv renewal",
+          "description": "Due in 3 days",
+          "priority": "high",
+          "completed": false
+        }
+      ],
+      "bills": [
+        {
+          "id": "bill_001",
+          "provider": "AEDC (Electricity)",
+          "amount": 8500,
+          "dueDate": "2026-03-07",
+          "status": "pending",
+          "autopay": false,
+          "icon": "fa-bolt"
+        },
+        {
+          "id": "bill_002",
+          "provider": "DStv Premium",
+          "amount": 24500,
+          "dueDate": "2026-03-08",
+          "status": "pending",
+          "autopay": false,
+          "icon": "fa-tv"
+        },
+        {
+          "id": "bill_003",
+          "provider": "Spectranet Internet",
+          "amount": 15000,
+          "dueDate": "2026-03-10",
+          "status": "pending",
+          "autopay": false,
+          "icon": "fa-wifi"
+        }
+      ]
+    },
+    {
+      "id": "debt",
+      "title": "Become Debt Free",
+      "icon": "fa-chart-line",
+      "color": "#845EC2",
+      "bgColor": "#F3EDFF",
+      "status": "On track: 10% complete",
+      "progress": 10,
+      "badge": "recommended",
+      "badgeText": "PLAN READY",
+      "phase": "full",
+      "featured": false,
+      "insights": [
+        "Pay off debts 6 months faster with AI plan",
+        "Save ₦45,000 in interest with our strategy",
+        "Focus on highest-interest debt first"
+      ],
+      "actions": [
+        {
+          "id": "action_debt_1",
+          "title": "Review your 6-month debt-free plan",
+          "description": "Customized strategy to eliminate ₦180,000",
+          "priority": "high",
+          "completed": false
+        },
+        {
+          "id": "action_debt_2",
+          "title": "Make extra ₦15,000 payment this week",
+          "description": "Reduces timeline by 2 weeks",
+          "priority": "medium",
+          "completed": false
+        },
+        {
+          "id": "action_debt_3",
+          "title": "Set up auto-payment schedule",
+          "description": "Never miss a payment",
+          "priority": "medium",
+          "completed": false
+        }
+      ],
+      "debts": [
+        {
+          "id": "debt_001",
+          "creditor": "Access Bank Credit Card",
+          "balance": 85000,
+          "interestRate": 28,
+          "minimumPayment": 8500,
+          "dueDate": "2026-03-15",
+          "priority": 1,
+          "icon": "fa-credit-card"
+        },
+        {
+          "id": "debt_002",
+          "creditor": "Family Loan (Uncle Chidi)",
+          "balance": 50000,
+          "interestRate": 0,
+          "minimumPayment": 10000,
+          "dueDate": "2026-03-20",
+          "priority": 2,
+          "icon": "fa-handshake"
+        },
+        {
+          "id": "debt_003",
+          "creditor": "Cooperative Society",
+          "balance": 45000,
+          "interestRate": 12,
+          "minimumPayment": 5000,
+          "dueDate": "2026-03-12",
+          "priority": 3,
+          "icon": "fa-users"
+        }
+      ],
+      "debtPlan": {
+        "totalDebt": 180000,
+        "monthlyPayment": 30000,
+        "estimatedPayoff": "September 2026",
+        "interestSaved": 45000,
+        "strategy": "avalanche"
+      }
+    },
+    {
+      "id": "shopping",
+      "title": "Buy Smarter",
+      "icon": "fa-shopping-cart",
+      "color": "#FF6F91",
+      "bgColor": "#FFE8EE",
+      "status": "Ready: Cashback available",
+      "progress": 0,
+      "badge": "progress",
+      "badgeText": "₦2.5K SAVED",
+      "phase": "full",
+      "featured": false,
+      "insights": [
+        "You've saved ₦2,500 this month",
+        "Best deals on data right now",
+        "Bulk buying saves you 15% on airtime"
+      ],
+      "actions": [
+        {
+          "id": "action_shop_1",
+          "title": "Buy ₦5,000 data bundle",
+          "description": "Get 8GB for ₦4,200 (16% off)",
+          "priority": "medium",
+          "completed": false
+        },
+        {
+          "id": "action_shop_2",
+          "title": "Recharge ₦2,000 airtime",
+          "description": "Earn 5% cashback (₦100)",
+          "priority": "low",
+          "completed": false
+        },
+        {
+          "id": "action_shop_3",
+          "title": "Compare prices for groceries",
+          "description": "Save up to ₦3,000 at Shoprite",
+          "priority": "medium",
+          "completed": false
+        }
+      ],
+      "deals": [
+        {
+          "id": "deal_001",
+          "provider": "MTN",
+          "product": "8GB Data Bundle",
+          "regularPrice": 5000,
+          "discountPrice": 4200,
+          "savings": 800,
+          "savingsPercent": 16,
+          "cashback": 0,
+          "icon": "fa-signal"
+        },
+        {
+          "id": "deal_002",
+          "provider": "Glo",
+          "product": "₦2,000 Airtime",
+          "regularPrice": 2000,
+          "discountPrice": 2000,
+          "savings": 0,
+          "savingsPercent": 0,
+          "cashback": 100,
+          "icon": "fa-phone"
+        }
+      ]
+    },
+    {
+      "id": "rewards",
+      "title": "Get Rewarded",
+      "icon": "fa-gift",
+      "color": "#FFD93D",
+      "bgColor": "#FFF8E1",
+      "status": "1,250 points available",
+      "progress": 62,
+      "badge": null,
+      "badgeText": null,
+      "phase": "full",
+      "featured": false,
+      "insights": [
+        "You're 250 points away from a free ₦5,000 voucher",
+        "Redeem points for data, airtime, or cashback",
+        "Earn 2x points on bill payments this week"
+      ],
+      "actions": [
+        {
+          "id": "action_reward_1",
+          "title": "Redeem 1,000 points for ₦2,500 data",
+          "description": "3GB MTN data bundle",
+          "priority": "low",
+          "completed": false
+        },
+        {
+          "id": "action_reward_2",
+          "title": "Complete survey for 100 points",
+          "description": "Takes 2 minutes",
+          "priority": "low",
+          "completed": false
+        },
+        {
+          "id": "action_reward_3",
+          "title": "Earn 500 points: Pay 3 bills this week",
+          "description": "2x points promotion",
+          "priority": "medium",
+          "completed": false
+        }
+      ],
+      "rewards": {
+        "currentPoints": 1250,
+        "nextTier": 1500,
+        "tierName": "Silver",
+        "nextTierName": "Gold",
+        "redeemable": [
+          {
+            "id": "reward_001",
+            "name": "3GB Data Bundle",
+            "points": 1000,
+            "value": 2500,
+            "icon": "fa-signal",
+            "available": true
+          },
+          {
+            "id": "reward_002",
+            "name": "₦2,000 Airtime",
+            "points": 800,
+            "value": 2000,
+            "icon": "fa-phone",
+            "available": true
+          },
+          {
+            "id": "reward_003",
+            "name": "₦5,000 Cash Voucher",
+            "points": 1500,
+            "value": 5000,
+            "icon": "fa-money-bill",
+            "available": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "title": "Stress Free Travel",
+      "icon": "fa-plane",
+      "color": "#00B4D8",
+      "bgColor": "#E6F7FB",
+      "status": "Coming soon",
+      "progress": 0,
+      "badge": null,
+      "badgeText": null,
+      "phase": "lite",
+      "featured": false,
+      "insights": [],
+      "actions": []
+    },
+    {
+      "id": "health",
+      "title": "Feel Great",
+      "icon": "fa-heartbeat",
+      "color": "#F72585",
+      "bgColor": "#FFE6F0",
+      "status": "Coming soon",
+      "progress": 0,
+      "badge": null,
+      "badgeText": null,
+      "phase": "lite",
+      "featured": false,
+      "insights": [],
+      "actions": []
+    },
+    {
+      "id": "income",
+      "title": "Money Maker",
+      "icon": "fa-coins",
+      "color": "#FB8500",
+      "bgColor": "#FFF3E6",
+      "status": "Partial features",
+      "progress": 0,
+      "badge": null,
+      "badgeText": null,
+      "phase": "partial",
+      "featured": false,
+      "insights": [],
+      "actions": []
+    },
+    {
+      "id": "savings",
+      "title": "Preserve Wealth",
+      "icon": "fa-piggy-bank",
+      "color": "#06A77D",
+      "bgColor": "#E6F7F2",
+      "status": "Coming soon",
+      "progress": 0,
+      "badge": null,
+      "badgeText": null,
+      "phase": "lite",
+      "featured": false,
+      "insights": [],
+      "actions": []
+    },
+    {
+      "id": "memories",
+      "title": "Create Memories",
+      "icon": "fa-camera",
+      "color": "#9D4EDD",
+      "bgColor": "#F5EDFF",
+      "status": "Coming soon",
+      "progress": 0,
+      "badge": null,
+      "badgeText": null,
+      "phase": "lite",
+      "featured": false,
+      "insights": [],
+      "actions": []
+    }
+  ],
+  "heroCards": [
+    {
+      "id": "hero_1",
+      "title": "3 Bills Due This Week",
+      "subtitle": "Automate to avoid ₦2,500 late fees",
+      "action": "Review Now",
+      "icon": "fa-file-invoice-dollar",
+      "background": "linear-gradient(135deg, #00C9A7 0%, #00B494 100%)",
+      "targetBox": "bills"
+    },
+    {
+      "id": "hero_2",
+      "title": "Debt-Free in 6 Months",
+      "subtitle": "Your personalized plan is ready",
+      "action": "View Plan",
+      "icon": "fa-chart-line",
+      "background": "linear-gradient(135deg, #845EC2 0%, #6B4A9F 100%)",
+      "targetBox": "debt"
+    },
+    {
+      "id": "hero_3",
+      "title": "Save ₦800 on Data",
+      "subtitle": "8GB bundle at 16% off today",
+      "action": "Buy Now",
+      "icon": "fa-shopping-cart",
+      "background": "linear-gradient(135deg, #FF6F91 0%, #E65B7F 100%)",
+      "targetBox": "shopping"
+    }
+  ],
+  "chatHistory": [],
+  "journeyStates": {
+    "bills": {
+      "currentStep": 0,
+      "completed": false,
+      "steps": ["review", "autopay", "confirm"]
+    },
+    "debt": {
+      "currentStep": 0,
+      "completed": false,
+      "steps": ["viewPlan", "extraPayment", "automate"]
+    },
+    "shopping": {
+      "currentStep": 0,
+      "completed": false,
+      "steps": ["selectDeal", "confirm", "purchase"]
+    }
+  }
+}

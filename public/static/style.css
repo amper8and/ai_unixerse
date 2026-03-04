@@ -1,1 +1,399 @@
-h1 { font-family: Arial, Helvetica, sans-serif; }
+/* AI-Mobile Lifestyle Banking - Custom Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F8F9FA;
+  overflow-x: hidden;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Mobile-first layout */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: white;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+}
+
+/* Hero Carousel */
+.carousel-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Need Box Tiles */
+.need-box-tile {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.need-box-tile:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.need-box-tile.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #00C9A7 0%, #00B494 100%);
+  color: white;
+  min-height: 180px;
+}
+
+.need-box-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-urgent {
+  background: #FF6F91;
+  color: white;
+}
+
+.badge-recommended {
+  background: #FFD93D;
+  color: #1A1A2E;
+}
+
+.badge-progress {
+  background: #00C9A7;
+  color: white;
+}
+
+/* Progress Ring */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+/* AI Assistant Button */
+.ai-assistant-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #00C9A7 0%, #00B494 100%);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 32px;
+  box-shadow: 0 8px 24px rgba(0, 201, 167, 0.3);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-assistant-btn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Bottom Sheet */
+.bottom-sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  padding: 24px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 201;
+  transform: translateY(100%);
+  animation: slideUp 0.3s forwards;
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
+}
+
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #E0E0E0;
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+/* Action Cards */
+.action-card {
+  background: #F8F9FA;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.action-card:hover {
+  border-color: #00C9A7;
+  background: #F0FDF9;
+}
+
+.action-card.completed {
+  opacity: 0.6;
+  border-color: #00C9A7;
+  background: #E6FAF5;
+}
+
+/* Chat Messages */
+.chat-message {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  animation: messageSlideIn 0.3s ease;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message.user {
+  flex-direction: row-reverse;
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-bubble.assistant {
+  background: #F0FDF9;
+  color: #1A1A2E;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.user {
+  background: #00C9A7;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Input Area */
+.chat-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid #E0E0E0;
+  background: white;
+  position: sticky;
+  bottom: 0;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #E0E0E0;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: #00C9A7;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: #00C9A7;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #00B494;
+}
+
+.btn-secondary {
+  background: #F8F9FA;
+  color: #1A1A2E;
+  border: 2px solid #E0E0E0;
+}
+
+.btn-secondary:hover {
+  border-color: #00C9A7;
+  background: #F0FDF9;
+}
+
+/* Loading States */
+.skeleton {
+  background: linear-gradient(90deg, #F0F0F0 25%, #E0E0E0 50%, #F0F0F0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 400px;
+  width: 100%;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 100%;
+  }
+}
+
+/* Animations for demo mode */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.highlight-pulse {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 4px rgba(0, 201, 167, 0.4);
+}
+
+/* Success/Error States */
+.success-icon {
+  color: #00C9A7;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.error-icon {
+  color: #FF6F91;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
