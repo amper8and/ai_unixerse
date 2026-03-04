@@ -11,9 +11,9 @@ A fully functional, executive-presentation-quality demo app for AI-Mobile Lifest
 
 ## 🔗 URLs
 
-- **Sandbox Demo**: https://3000-ih8t89obv4uv4eq8zcc9b-6532622b.e2b.dev
+- **Sandbox Demo**: https://3000-ixbegzpb9pve500g4ohvd-6532622b.e2b.dev
+- **GitHub Repository**: https://github.com/amper8and/ai_unixerse
 - **Production**: (Deploy with `npm run deploy:prod`)
-- **GitHub**: (To be pushed)
 
 ## ✨ Features
 
