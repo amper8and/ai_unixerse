@@ -54,7 +54,7 @@ class AIBank {
           <div class="flex justify-between items-center mb-6">
             <div>
               <h1 class="text-2xl font-bold">${user.greeting}, ${user.firstName}</h1>
-              <p class="text-white/80 text-sm mt-1">Your lifestyle banking assistant</p>
+              <p class="text-white/80 text-sm mt-1">Quick Wins:</p>
             </div>
             <button onclick="aiBank.openSettings()" class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30">
               <i class="fas fa-user text-xl"></i>

@@ -6,7 +6,7 @@
     "email": "adebayo.okonkwo@example.com",
     "phone": "+234 803 456 7890",
     "avatar": "https://ui-avatars.com/api/?name=Adebayo+Okonkwo&background=00C9A7&color=fff",
-    "greeting": "Good morning",
+    "greeting": "Welcome",
     "preferences": {
       "topPriorities": ["bills", "debt", "rewards"],
       "rewardTypes": ["cashback", "data", "airtime"],
