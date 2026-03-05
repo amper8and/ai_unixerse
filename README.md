@@ -12,9 +12,10 @@ A fully functional, executive-presentation-quality demo app for UBA Lifestyle Ba
 
 ## 🔗 URLs
 
+- **Production (Cloudflare Pages)**: https://uba-lifestyle-banking.pages.dev
+- **Latest Deployment**: https://6857aab5.uba-lifestyle-banking.pages.dev
 - **Sandbox Demo**: https://3000-ixaxiuo51s23sxigcf9n6-6532622b.e2b.dev
 - **GitHub Repository**: https://github.com/amper8and/ai_unixerse
-- **Production**: (Deploy with `npm run deploy:prod`)
 
 ## ✨ Features
 
@@ -231,20 +232,29 @@ npm run test          # Test local server with curl
 
 ## 🚀 Deployment
 
-### Sandbox Testing (Current)
-Already running at: https://3000-ih8t89obv4uv4eq8zcc9b-6532622b.e2b.dev
+### ✅ Production Deployment (Live on Cloudflare Pages)
 
-### Cloudflare Pages (Production)
+**Production URL**: https://uba-lifestyle-banking.pages.dev  
+**Latest Deployment**: https://6857aab5.uba-lifestyle-banking.pages.dev  
+**Project Name**: uba-lifestyle-banking  
+**Status**: ✅ Deployed and Active  
+**Deployed**: March 5, 2026
+
+### Sandbox Testing
+Running at: https://3000-ixaxiuo51s23sxigcf9n6-6532622b.e2b.dev
+
+### Deploying Updates
 
 ```bash
 # Step 1: Build the project
 npm run build
 
 # Step 2: Deploy to Cloudflare Pages
-npm run deploy:prod
+npx wrangler pages deploy dist --project-name uba-lifestyle-banking
 
 # You'll get a URL like:
-# https://webapp.pages.dev
+# https://uba-lifestyle-banking.pages.dev (production)
+# https://[hash].uba-lifestyle-banking.pages.dev (deployment preview)
 ```
 
 ### Custom Domain
